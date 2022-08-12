@@ -25,6 +25,8 @@ pub fn main() anyerror!void {
         const msg = "HTTP/1.1 200 OK\r\n\r\nHello, World\n";
         try w.writeAll(msg);
         print("Response: {s}\n\n", .{msg});
+
+        conn.stream.close();
     }
 }
 ```
